@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>THE CARBON STUDIO — 水素エネルギー用電極材料</title>
+<meta name="description" content="水素エネルギー（燃料電池・水電解）用電極材料およびソリューション — THE CARBON STUDIO, INC. FCDIC Seminar 2026.11.11">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="theme-color" content="#212121">
+<link rel="icon" type="image/png" href="tcs_logo_reverse.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap">
+<style>
+/* design-tokens v0.4 only: ink · cyan · slate · warm. No gradients. */
+:root{
+  --ink:#212121; --ink2:#2E2E2E;
+  --cyan:#4BB7E8; --cyan40:#199CD8; --cyan30:#137CAD;
+  --s700:#334155; --s600:#475569; --s500:#64748B; --s400:#94A3B8; --s300:#CBD5E1; --s200:#E2E8F0; --s100:#F1F5F9;
+  --white:#FFFFFF; --warm:#D2622F;
+  --line:rgba(226,232,240,.10); --line2:rgba(226,232,240,.18);
+  --r:8px;
+  --font:"Pretendard JP","Pretendard","Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Apple SD Gothic Neo",sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--ink);color:var(--s200);font-family:var(--font);font-size:15px;line-height:1.75;letter-spacing:.02em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html[data-lang="ja"] [lang="en"]:not(html){display:none!important}
+html[data-lang="en"] [lang="ja"]:not(html){display:none!important}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;position:relative}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;background-position:-1px -1px;opacity:.5}
+main,header,footer{position:relative;z-index:1}
+.num,.fig .num,table,.kv dd,.proof .big{font-variant-numeric:tabular-nums}
+
+.top{position:sticky;top:0;z-index:10;background:rgba(33,33,33,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.top img{height:26px;width:auto;display:block}
+.top nav{display:none}
+.lang{display:flex;border:1px solid var(--line2);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600}
+.lang button{all:unset;cursor:pointer;padding:6px 12px;color:var(--s400);letter-spacing:.04em}
+.lang button[aria-pressed="true"]{background:var(--s200);color:var(--ink)}
+.lang button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+.hero{position:relative;padding:40px 0 34px;overflow:hidden}
+.pores{position:absolute;right:-250px;top:-170px;width:540px;height:540px;opacity:.5;pointer-events:none}
+.pores g.drift{animation:drift 70s linear infinite;transform-origin:280px 280px}
+@keyframes drift{to{transform:rotate(360deg)}}
+.pores circle.pulse{animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.15}50%{opacity:.95}}
+.eyebrow{font-size:12px;letter-spacing:.06em;color:var(--cyan);display:flex;align-items:flex-start;gap:10px;line-height:1.6;max-width:30em}
+.eyebrow::before{content:"";flex:none;width:6px;height:6px;margin-top:7px;border:1px solid var(--cyan);border-radius:50%}
+h1{font-size:clamp(27px,7.4vw,50px);line-height:1.32;font-weight:700;color:var(--white);margin:16px 0 14px;letter-spacing:0;max-width:15em;word-break:keep-all;overflow-wrap:anywhere}
+h1 .ib{display:inline-block}
+h1 .k{color:var(--cyan)}
+.lead{font-size:15px;color:var(--s300);max-width:34em}
+.lead b{color:var(--white);font-weight:600}
+.proof{margin-top:24px;border:1px solid rgba(75,183,232,.5);border-radius:var(--r);padding:16px 18px 14px;background:rgba(33,33,33,.78);position:relative}
+.proof .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase}
+.proof .big{font-size:clamp(52px,16vw,84px);line-height:1;font-weight:700;color:var(--white);margin:8px 0 6px;letter-spacing:-.02em}
+.proof .big small{font-size:.32em;color:var(--cyan);margin-left:6px;letter-spacing:0;font-weight:600}
+.proof .what{font-size:14px;color:var(--s100);font-weight:600}
+.proof .cond{font-size:11.5px;color:var(--s400);margin-top:6px;line-height:1.65}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;padding:12px 18px;border-radius:var(--r);border:1px solid var(--line2);color:var(--white);transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--cyan)}
+.btn.primary{background:var(--cyan40);border-color:var(--cyan40)}
+.btn.primary:hover{background:var(--cyan30);border-color:var(--cyan30)}
+.btn svg{width:14px;height:14px;flex:none}
+.scrollcue{display:none}
+
+.figs{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line2);border:1px solid var(--line2);border-radius:var(--r);overflow:hidden;margin:4px 0 6px}
+.fig{background:var(--ink);padding:20px 18px 18px}
+.fig .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--s400);text-transform:uppercase}
+.fig .num{font-size:44px;line-height:1.05;font-weight:700;color:var(--white);margin:10px 0 6px;letter-spacing:-.02em}
+.fig .num small{font-size:16px;font-weight:600;color:var(--cyan);margin-left:4px;letter-spacing:0}
+.fig .what{font-size:14px;color:var(--s200);font-weight:600}
+.fig .cond{font-size:12px;color:var(--s400);margin-top:6px;line-height:1.6}
+.fig .cmp{color:var(--warm);font-weight:600}
+.note{font-size:11.5px;color:var(--s500);margin-top:8px}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.sec-h .no{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:.12em}
+h2{font-size:22px;line-height:1.4;color:var(--white);font-weight:700;word-break:keep-all}
+.sub{color:var(--s400);font-size:13.5px;margin-bottom:24px;max-width:40em}
+
+.lane-l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--s400);margin:16px 0 8px;text-transform:uppercase}
+.lane-l span{text-transform:none;font-family:var(--font);letter-spacing:.02em}
+.chain{display:grid;grid-template-columns:1fr;gap:8px}
+.node{border:1px solid var(--line2);border-radius:var(--r);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.node .n{font-weight:700;color:var(--white);font-size:15px;white-space:nowrap}
+.node .d{font-size:12px;color:var(--s400);text-align:right}
+.node.tcs{border-color:rgba(75,183,232,.55)}
+.node.tcs .n::before{content:"TCS";font-family:var(--mono);font-size:10px;color:var(--ink);background:var(--cyan);border-radius:3px;padding:1px 5px;margin-right:8px;vertical-align:2px;letter-spacing:.06em}
+.node.ptn{border-style:dashed}
+
+.cards{display:grid;grid-template-columns:1fr;gap:14px}
+.card{border:1px solid var(--line2);border-radius:var(--r);padding:20px 18px;background:rgba(46,46,46,.55)}
+.card .code{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:.12em}
+.card h3{font-size:18px;color:var(--white);margin:6px 0 4px;line-height:1.45;word-break:keep-all}
+.card .en-name{font-size:12px;color:var(--s400)}
+.card p{font-size:14px;color:var(--s300);margin:12px 0 14px}
+.kv{border-top:1px solid var(--line);font-size:13px}
+.kv div{display:grid;grid-template-columns:6.4em 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.kv dt{color:var(--s400)}
+.kv dd{color:var(--s100)}
+
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line2);border-radius:var(--r);margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:560px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--cyan);font-weight:600;font-size:11.5px;background:rgba(255,255,255,.02);vertical-align:bottom}
+td.num,th.num{text-align:right}
+tbody tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+tr.ref td{color:var(--s400)}
+tr.tcs td:first-child{color:var(--white);font-weight:600}
+td.lag{color:var(--white);box-shadow:inset 0 -2px 0 var(--warm)}
+.scroll-hint{font-size:11px;color:var(--s500);margin-top:6px}
+.subhead{font-size:15px;color:var(--white);font-weight:600;margin:36px 0 2px}
+.cap{font-size:12px;color:var(--s400);margin-top:8px;line-height:1.7;max-width:60em}
+
+.chart{margin-top:14px;border:1px solid var(--line);border-radius:var(--r);padding:16px 14px}
+.chart svg{display:block;width:100%;max-width:640px;height:auto;overflow:visible}
+.chart text{font-family:var(--font);fill:var(--s300)}
+.bars{display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:7.6em 1fr 3.8em;align-items:center;gap:10px;font-size:12.5px}
+.bar .lbl{color:var(--s300)}
+.bar .track{height:12px;background:rgba(255,255,255,.05);border-radius:2px;position:relative;overflow:hidden}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;width:0;transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
+.bar.tcs .fill{background:var(--cyan)}
+.bar.ref .fill{background:var(--warm)}
+.bar .v{text-align:right;color:var(--white)}
+.honest{margin-top:16px;border:1px solid var(--line2);border-left:2px solid var(--warm);border-radius:var(--r);padding:14px 16px;font-size:13px;color:var(--s200);line-height:1.8;max-width:60em}
+.honest b{color:var(--white)}
+
+.steps{display:grid;grid-template-columns:1fr;gap:12px}
+.step{border:1px solid var(--line2);border-radius:var(--r);padding:18px 18px 16px;position:relative;background:rgba(46,46,46,.4)}
+.step .sn{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:.14em}
+.step h3{font-size:17px;color:var(--white);margin:6px 0 8px;line-height:1.45}
+.step p{font-size:13.5px;color:var(--s300)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{font-size:12.5px;color:var(--s100);border:1px solid var(--line2);border-radius:999px;padding:6px 14px}
+.pill::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cyan);margin-right:8px;vertical-align:1px}
+
+.ip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line2);border:1px solid var(--line2);border-radius:var(--r);overflow:hidden}
+.ip div{background:var(--ink);padding:18px 10px;text-align:center}
+.ip b{display:block;font-size:34px;color:var(--white);font-weight:700;line-height:1.1}
+.ip span{font-size:11.5px;color:var(--s400);display:block;margin-top:4px;line-height:1.55}
+
+.contact{border:1px solid rgba(75,183,232,.5);border-radius:var(--r);padding:26px 20px}
+.contact h2{margin-bottom:8px}
+.contact .lead2{font-size:14px;color:var(--s300);max-width:36em}
+.contact .acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+.addr{font-size:12.5px;color:var(--s400);margin-top:20px;line-height:1.85}
+.addr a{color:var(--s200)}
+
+footer{border-top:1px solid var(--line);padding:28px 0 calc(36px + env(safe-area-inset-bottom));font-size:11.5px;color:var(--s500);line-height:1.8}
+footer .ev{font-family:var(--mono);color:var(--s400);letter-spacing:.1em;margin-bottom:10px;display:block}
+footer p+p{margin-top:8px}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pores g.drift,.pores circle.pulse{animation:none!important}
+  .reveal{opacity:1;transform:none;transition:none}
+  .bar .fill{transition:none}
+  html{scroll-behavior:auto}
+}
+
+@media (max-width:759px){.chart svg text{font-size:17px!important}}
+@media (min-width:760px){
+  body{font-size:16px}
+  .wrap{padding:0 36px}
+  .top nav{display:flex;gap:26px;font-size:12.5px;color:var(--s300)}
+  .top nav a{text-decoration:none;letter-spacing:.06em}
+  .top nav a:hover{color:var(--cyan)}
+  .hero{padding:104px 0 84px}
+  .pores{right:-40px;top:-20px;width:720px;height:720px;opacity:1}
+  .hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+  .proof{margin-top:0;padding:24px 24px 20px}
+  .lead{font-size:16px}
+  .scrollcue{display:block;margin-top:40px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--s500)}
+  .figs{grid-template-columns:repeat(3,1fr)}
+  .fig{padding:28px 26px}
+  .fig .num{font-size:56px}
+  section{padding:84px 0}
+  h2{font-size:30px}
+  .chain{grid-template-columns:repeat(4,1fr);gap:0}
+  .node{flex-direction:column;align-items:flex-start;justify-content:flex-start;border-radius:0;margin-left:-1px;min-height:100px}
+  .node:first-child{border-radius:var(--r) 0 0 var(--r);margin-left:0}
+  .node:last-child{border-radius:0 var(--r) var(--r) 0}
+  .node .d{text-align:left}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .step:not(:last-child)::after{content:"";position:absolute;right:-13px;top:50%;width:14px;height:1px;background:var(--cyan)}
+  .scroll-hint{display:none}
+  .chart{padding:22px 24px}
+  .contact{padding:44px 44px}
+  .ip b{font-size:44px}
+}
+
+/* v4: two separated fields, mobile-first */
+html{scroll-padding-top:66px}
+.top nav a.fc{color:var(--cyan)} .top nav a.we{color:var(--warm)}
+.hero{padding:22px 0 18px}
+.hero .eyebrow{font-size:11.5px;max-width:none}
+.hero h1{font-size:clamp(25px,7vw,50px);margin:12px 0 10px}
+.hero .lead{font-size:14px;max-width:36em}
+.choose{padding:0 0 40px;border:0}
+.choose-h{font-size:12.5px;color:var(--s400);letter-spacing:.08em;margin-bottom:10px}
+.paths{display:grid;grid-template-columns:1fr;gap:12px}
+.path{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start;text-decoration:none;border:1px solid var(--line2);border-top-width:3px;border-radius:var(--r);padding:16px 16px 14px;background:rgba(46,46,46,.7);min-height:88px}
+.path:active,.path:hover{background:rgba(46,46,46,1)}
+.path.fc{border-top-color:var(--cyan)} .path.we{border-top-color:var(--warm)}
+.path .ico{width:44px;height:44px;grid-row:1/4}
+.path .pk{font-family:var(--mono);font-size:11px;letter-spacing:.14em}
+.path.fc .pk{color:var(--cyan)} .path.we .pk{color:var(--warm)}
+.path h3{font-size:18px;color:var(--white);margin:2px 0 2px;line-height:1.4;word-break:keep-all}
+.path .pe{font-size:12px;color:var(--s400)}
+.path p{font-size:13px;color:var(--s300);line-height:1.7;margin-top:6px;grid-column:2}
+.path .go{grid-column:2;display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--white)}
+.path .go::after{content:" \2193"}
+.field{padding:48px 0;border-top:3px solid var(--cyan)}
+.field.we{border-top-color:var(--warm);background:rgba(46,46,46,.55)}
+.field-badge{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.field-badge svg{width:40px;height:40px;flex:none}
+.field-badge .pk{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--cyan)}
+.field.we .field-badge .pk{color:var(--warm)}
+.field h2{font-size:21px}
+.purpose{border:1px solid var(--line2);border-left:3px solid var(--cyan);border-radius:var(--r);padding:14px 16px;font-size:14px;color:var(--s100);line-height:1.8;margin:12px 0 20px;max-width:46em;background:rgba(33,33,33,.6)}
+.field.we .purpose{border-left-color:var(--warm)}
+.purpose b{color:var(--white)}
+.purpose a{color:var(--cyan);padding:4px 0;display:inline-block} .field.we .purpose a{color:var(--warm)}
+.field .subhead{border-left:2px solid var(--cyan);padding-left:10px}
+.field.we .subhead{border-left-color:var(--warm)}
+.field.we .node.tcs{border-color:rgba(210,98,47,.6)}
+.field.we .node.tcs .n::before{background:var(--warm)}
+.field.we th{color:var(--warm)}
+.field.we .btn.primary,.cbox.we .btn.primary{background:var(--warm);border-color:var(--warm);color:#fff}
+.field.we .btn:hover{border-color:var(--warm)}
+.btn{min-height:46px}
+.fig1{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line2);border:1px solid var(--line2);border-radius:var(--r);overflow:hidden;margin:6px 0}
+.field.we .fig1 .fig .num small{color:var(--warm)}
+.photos{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+.ph{margin:0;border:1px solid var(--line2);border-radius:var(--r);overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.ph img{display:block;width:100%;height:auto;order:1}
+.ph .badge{order:2;font-family:var(--font);font-size:11px;letter-spacing:.08em;padding:6px 12px;background:var(--cyan);color:var(--ink);font-weight:700}
+.ph .badge.ill{background:var(--s700);color:var(--white)}
+.ph figcaption{order:3;font-size:11.5px;color:var(--s400);padding:8px 12px;background:var(--ink2);line-height:1.6}
+.contact2{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+.cbox{border:1px solid var(--line2);border-top:3px solid var(--cyan);border-radius:var(--r);padding:18px}
+.cbox.we{border-top-color:var(--warm)}
+.cbox h3{font-size:16px;color:var(--white);margin-bottom:4px}
+.cbox p{font-size:13px;color:var(--s300);margin-bottom:12px}
+.thumb{display:none}
+.pcrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pcrow .btn{font-size:13px;padding:10px 14px;min-height:44px;background:transparent;cursor:pointer;font-family:var(--font)}
+.pcrow .btn svg{width:15px;height:15px}
+.pcrow .status{font-size:12px;color:var(--cyan);align-self:center;min-height:1em}
+.pcblock{border:1px solid var(--line2);border-radius:var(--r);padding:16px;margin-top:18px;background:rgba(33,33,33,.5)}
+.pcblock h3{font-size:15px;color:var(--white);margin-bottom:4px}
+.pcblock p{font-size:13px;color:var(--s300)}
+@media (max-width:759px){
+  body{padding-bottom:72px}
+  .thumb{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(33,33,33,.95);border-top:1px solid var(--line2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .thumb a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:50px;border-radius:var(--r);text-decoration:none;font-size:13px;font-weight:600;color:var(--white);text-align:center;line-height:1.25;border:1px solid var(--line2)}
+  .thumb a.m{background:var(--cyan);color:var(--ink);border-color:var(--cyan)}
+  .thumb svg{width:16px;height:16px;flex:none}
+  .pores{opacity:.35}
+  .path p{display:none}
+  .path{min-height:78px;padding:14px 16px 12px}
+}
+@media (min-width:760px){.pcrow.heroonly{display:none}}
+@media (min-width:760px){
+  .paths{grid-template-columns:1fr 1fr;gap:18px}
+  .path{padding:26px 24px 22px;column-gap:18px;grid-template-columns:56px 1fr}
+  .path .ico{width:56px;height:56px}
+  .path h3{font-size:24px}
+  .field{padding:88px 0}
+  .field h2{font-size:30px}
+  .fig1{grid-template-columns:repeat(3,1fr)}
+  .fig1.two{grid-template-columns:repeat(2,1fr)}
+  .photos.two{grid-template-columns:1fr 1fr}
+  .ph.wide{grid-column:1/-1}
+  .contact2{grid-template-columns:1fr 1fr}
+  .hero{padding:90px 0 56px}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg" aria-hidden="true"></div>
+<header class="top"><div class="wrap">
+  <a href="#top" aria-label="THE CARBON STUDIO"><img src="tcs_logo_reverse.png" alt="THE CARBON STUDIO" width="125" height="26"></a>
+  <nav aria-label="Sections"><a class="fc" href="#fc"><span lang="ja">燃料電池 PEMFC</span><span lang="en">Fuel cell</span></a><a class="we" href="#we"><span lang="ja">水電解 PEMWE</span><span lang="en">Electrolysis</span></a><a href="#work"><span lang="ja">進め方</span><span lang="en">Process</span></a><a href="#contact"><span lang="ja">お問い合わせ</span><span lang="en">Contact</span></a></nav>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-set="ja" aria-pressed="true">日本語</button><button type="button" data-set="en" aria-pressed="false">EN</button></div>
+</div></header>
+<main id="top">
+<div class="hero">
+  <svg class="pores" viewBox="0 0 560 560" aria-hidden="true">
+    <defs>
+      <pattern id="hex" width="28" height="48.5" patternUnits="userSpaceOnUse">
+        <circle cx="14" cy="12.1" r="8.6" fill="none" stroke="#4BB7E8" stroke-opacity=".26" stroke-width=".8"/>
+        <circle cx="0" cy="36.4" r="8.6" fill="none" stroke="#4BB7E8" stroke-opacity=".26" stroke-width=".8"/>
+        <circle cx="28" cy="36.4" r="8.6" fill="none" stroke="#4BB7E8" stroke-opacity=".26" stroke-width=".8"/>
+      </pattern>
+      <mask id="fade"><circle cx="280" cy="280" r="270" fill="#fff" fill-opacity=".9"/><circle cx="280" cy="280" r="150" fill="#000" fill-opacity=".35"/></mask>
+    </defs>
+    <g class="drift" mask="url(#fade)">
+      <rect x="-60" y="-60" width="680" height="680" fill="url(#hex)"/>
+    </g>
+    <g fill="none" stroke="#4BB7E8">
+      <circle cx="280" cy="280" r="270" stroke-opacity=".14" stroke-dasharray="2 6"/>
+      <circle cx="280" cy="280" r="200" stroke-opacity=".10"/>
+    </g>
+    <g fill="#4BB7E8">
+      <circle class="pulse" cx="182" cy="206" r="2.2"/>
+      <circle class="pulse" cx="350" cy="158" r="1.8" style="animation-delay:-2s"/>
+      <circle class="pulse" cx="406" cy="330" r="2" style="animation-delay:-4s"/>
+      <circle class="pulse" cx="238" cy="398" r="1.6" style="animation-delay:-3s"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow"><span><span lang="ja">THE CARBON STUDIO（韓国）｜水素エネルギー用電極材料</span><span lang="en">THE CARBON STUDIO (Korea) | Electrode materials for hydrogen energy</span></span></div>
+    <h1><span lang="ja"><span class="ib">電極のコアとなる</span><span class="ib k">材料を、</span><span class="ib">自社で。</span></span><span lang="en">The core materials of the electrode, <span class="k">made in-house.</span></span></h1>
+    <p class="lead"><span lang="ja">燃料電池用の炭素担体（MPC）と、PEM水電解用のIr系触媒・CCM・MEA。<b>用途ごとに製品とデータを分けています。</b></span><span lang="en">Carbon supports (MPC) for fuel cells; Ir-based catalysts, CCMs and MEAs for PEM water electrolysis. <b>Products and data are separated by application.</b></span></p>
+    <div class="pcrow heroonly"><button type="button" class="btn" data-share="1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="8.5" rx="1"/><path d="M5 14h6M8 11v3"/></svg><span lang="ja">PCで続きを見る</span><span lang="en">Continue on PC</span></button><a class="btn" data-selfmail="1" href="mailto:?subject=THE%20CARBON%20STUDIO&body="><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">ご自身宛にURLを送る</span><span lang="en">E-mail the link to yourself</span></a><span class="status" role="status" aria-live="polite"></span></div>
+  </div>
+</div>
+
+<section class="choose" id="choose"><div class="wrap">
+  <p class="choose-h"><span lang="ja">ご関心の分野をお選びください</span><span lang="en">Choose your field</span></p>
+  <div class="paths">
+    <a class="path fc" href="#fc"><svg class="ico" viewBox="0 0 44 44" fill="none" stroke="#4BB7E8" stroke-width="1.6" aria-hidden="true"><polygon points="22,4 38,13 38,31 22,40 6,31 6,13"/><circle cx="22" cy="22" r="4"/><circle cx="22" cy="22" r="9" stroke-opacity=".5" stroke-dasharray="2 3"/><path d="M15 22h-6M35 22h-6" stroke-opacity=".7"/></svg><div><div class="pk">A · PEMFC</div><h3><span lang="ja">燃料電池（PEMFC）向け</span><span lang="en">For fuel cells (PEMFC)</span></h3><div class="pe">MPC · Mesoporous carbon support</div></div>
+      <p><span lang="ja">触媒メーカー様向けの炭素担体 MPC。単セル評価データ、実測のTEM・SEM像。</span><span lang="en">MPC carbon support for catalyst makers. Single-cell data, measured TEM/SEM images.</span></p><span class="go"><span lang="ja">燃料電池へ</span><span lang="en">Fuel cells</span></span></a>
+    <a class="path we" href="#we"><svg class="ico" viewBox="0 0 44 44" fill="none" stroke="#D2622F" stroke-width="1.6" aria-hidden="true"><path d="M22 5C22 5 11 18 11 26a11 11 0 0 0 22 0C33 18 22 5 22 5z"/><circle cx="18" cy="27" r="1.8"/><circle cx="25" cy="31" r="1.4"/><path d="M22 14v6" stroke-opacity=".6"/></svg><div><div class="pk">B · PEMWE</div><h3><span lang="ja">水電解（PEMWE）向け</span><span lang="en">For water electrolysis (PEMWE)</span></h3><div class="pe">Ir-based catalyst · CCM · MEA</div></div>
+      <p><span lang="ja">Ir系アノード触媒から CCM・MEA まで一貫製造。耐久試験データ（累計932 h）。</span><span lang="en">Ir-based anode catalyst through CCM and MEA, made in-house. Durability data (932 h in total).</span></p><span class="go"><span lang="ja">水電解へ</span><span lang="en">Water electrolysis</span></span></a>
+  </div>
+</div></section>
+
+<!-- ============ A. FUEL CELL ============ -->
+<section class="field fc reveal" id="fc"><div class="wrap">
+  <div class="field-badge"><svg  viewBox="0 0 44 44" fill="none" stroke="#4BB7E8" stroke-width="1.6" aria-hidden="true"><polygon points="22,4 38,13 38,31 22,40 6,31 6,13"/><circle cx="22" cy="22" r="4"/><circle cx="22" cy="22" r="9" stroke-opacity=".5" stroke-dasharray="2 3"/><path d="M15 22h-6M35 22h-6" stroke-opacity=".7"/></svg><div><div class="pk">A · PEMFC</div><h2><span lang="ja">燃料電池（PEMFC）向け：炭素担体 MPC</span><span lang="en">Fuel cells (PEMFC): MPC carbon support</span></h2></div></div>
+  <p class="purpose"><span lang="ja"><b>このセクションは、燃料電池（PEMFC）の触媒に使う炭素担体「MPC」のご紹介です。</b>水電解のご用件は <a href="#we">B 水電解セクション</a> をご覧ください。</span><span lang="en"><b>This section is about “MPC”, the carbon support for fuel-cell (PEMFC) catalysts.</b> For water electrolysis, see <a href="#we">Section B</a>.</span></p>
+
+  <div class="fig1">
+    <div class="fig"><div class="tag">PEMFC · MPC support</div>
+      <div class="num"><span>0.646</span><small>V</small></div>
+      <div class="what"><span lang="ja">2.0 A/cm² での単セル電圧</span><span lang="en">Single-cell voltage at 2.0 A/cm²</span></div>
+      <div class="cond"><span lang="ja">80 ℃、カソード RH 50%・背圧 2.5 bar、カソード Pt 0.30 mg/cm²、TCS MS 04担体 Pt/C 60%。当社資料掲載の代表値で、保証値ではありません。</span><span lang="en">80 ℃; cathode 50% RH, 2.5 bar back pressure; cathode 0.30 mg-Pt/cm²; 60% Pt/C on TCS MS 04. Representative value from TCS material; not guaranteed.</span></div></div>
+    <div class="fig"><div class="tag">PEMFC · Catalyst AST</div>
+      <div class="num"><span>29.3</span><small>%</small></div>
+      <div class="what"><span lang="ja">30,000サイクル後、2.0 A/cm² の電圧低下率</span><span lang="en">Voltage loss at 2.0 A/cm² after 30,000 cycles</span></div>
+      <div class="cond"><span lang="ja">市販Pt/C <span class="cmp">32.2%</span>。TCS MS 04担体 Pt/C 50%（0.646 V とは別試料）</span><span lang="en">Commercial Pt/C <span class="cmp">32.2%</span>. 50% Pt/C on TCS MS 04 (a different sample from the 0.646 V value)</span></div></div>
+    <div class="fig"><div class="tag">IP · <span lang="ja">炭素担体</span><span lang="en">Carbon support</span></div>
+      <div class="num"><span>7</span><small><span lang="ja">件</span><span lang="en">granted</span></small></div>
+      <div class="what"><span lang="ja">登録特許（韓5・日1・中1）</span><span lang="en">Granted patents (KR 5, JP 1, CN 1)</span></div>
+      <div class="cond"><span lang="ja">特許査定 1（日、2026年11月4日発送）・出願中 5（米1・欧3・韓1）。2026年11月時点・当社集計。</span><span lang="en">Plus 1 allowed (JP; notice dispatched 4 Nov. 2026) and 5 pending (US 1, EP 3, KR 1). As of Nov. 2026, TCS count.</span></div></div>
+  </div>
+  <p class="note"><span lang="ja">当社資料に記載された評価の代表値。試験条件により異なり、保証値ではありません。</span><span lang="en">Representative values reported in TCS material; they vary with test conditions and are not guaranteed.</span></p>
+
+  <h3 class="subhead"><span lang="ja">当社の位置（燃料電池）</span><span lang="en">Where we sit (fuel cell)</span></h3>
+  <div class="chain">
+    <div class="node tcs"><span class="n"><span lang="ja">炭素担体</span><span lang="en">Carbon support</span></span><span class="d">MPC · MS 03/04/05</span></div>
+    <div class="node"><span class="n"><span lang="ja">触媒</span><span lang="en">Catalyst</span></span><span class="d">Pt/C</span></div>
+    <div class="node"><span class="n"><span lang="ja">MEA（評価）</span><span lang="en">MEA (evaluation)</span></span><span class="d"><span lang="ja">MPC担体の単セル評価</span><span lang="en">Single-cell evaluation on MPC</span></span></div>
+    <div class="node ptn"><span class="n"><span lang="ja">スタック・システム</span><span lang="en">Stack &amp; system</span></span><span class="d"><span lang="ja">パートナー</span><span lang="en">Partners</span></span></div>
+  </div>
+  <p class="cap"><span lang="ja">TCS＝当社が設計・製造する範囲。触媒は触媒メーカー様が当社担体で製造し、当社はMEA単セルで担体を評価しています。</span><span lang="en">TCS = what we design and make. Catalyst makers make the catalyst on our support; we evaluate the support in single-cell MEAs.</span></p>
+
+  <h3 class="subhead"><span lang="ja">MPCとは</span><span lang="en">What MPC is</span></h3>
+  <p class="cap" style="font-size:14px;color:var(--s300)"><span lang="ja">細孔径・比表面積・粒径を用途に合わせて設計した炭素担体（当社独自製法）です。連通したメソ細孔で白金の利用率を高め、細孔内の白金の被毒・溶出を抑える設計です。</span><span lang="en">A carbon support designed for pore size, surface area and particle size per application (proprietary process). Connected mesopores aim at high Pt utilization, with Pt inside the pores designed to reduce poisoning and dissolution.</span></p>
+  <div class="photos two">
+    <figure class="ph"><span class="badge">TEM · <span lang="ja">実測像</span><span lang="en">measured</span></span><img src="img/fc_tem_large.jpg" width="900" height="443" loading="lazy" alt="TEM images of TCS large-sized mesoporous carbon"><figcaption><span lang="ja">TCS メソポーラスカーボン（大粒径品）のTEM像。スケールバー 100 nm・200 nm。</span><span lang="en">TEM of TCS large-sized mesoporous carbon. Scale bars 100 nm, 200 nm.</span></figcaption></figure>
+    <figure class="ph"><span class="badge">TEM · <span lang="ja">実測像</span><span lang="en">measured</span></span><img src="img/fc_tem_small.jpg" width="900" height="443" loading="lazy" alt="TEM images of TCS small-sized mesoporous carbon"><figcaption><span lang="ja">TCS メソポーラスカーボン（小粒径品）のTEM像。スケールバー 100 nm・50 nm。</span><span lang="en">TEM of TCS small-sized mesoporous carbon. Scale bars 100 nm, 50 nm.</span></figcaption></figure>
+    <figure class="ph wide"><span class="badge">SEM · <span lang="ja">実測像</span><span lang="en">measured</span></span><img src="img/fc_sem_mea.jpg" width="1100" height="276" loading="lazy" alt="SEM images of a TCS MS 03 based MEA electrode surface at 200x, 1000x and 5000x"><figcaption><span lang="ja">TCS MS 03担体を用いたMEA電極表面のSEM像（倍率 200・1,000・5,000）。当社資料より。</span><span lang="en">SEM of the electrode surface of an MEA based on TCS MS 03 (200×, 1,000×, 5,000×). From TCS material.</span></figcaption></figure>
+  </div>
+
+  <h3 class="subhead"><span lang="ja">MPC 製品グレード</span><span lang="en">MPC product grades</span></h3>
+  <div class="chart"><svg viewBox="0 0 560 170" role="img" aria-label="Pore size ranges of MS 03, MS 04 and MS 05 (nm)"><line x1="90.0" y1="14" x2="90.0" y2="124" stroke="rgba(226,232,240,.12)"/><text x="90.0" y="144" font-size="11" text-anchor="middle" style="fill:var(--s400)">0</text><line x1="215.7" y1="14" x2="215.7" y2="124" stroke="rgba(226,232,240,.12)"/><text x="215.7" y="144" font-size="11" text-anchor="middle" style="fill:var(--s400)">10</text><line x1="341.4" y1="14" x2="341.4" y2="124" stroke="rgba(226,232,240,.12)"/><text x="341.4" y="144" font-size="11" text-anchor="middle" style="fill:var(--s400)">20</text><line x1="467.1" y1="14" x2="467.1" y2="124" stroke="rgba(226,232,240,.12)"/><text x="467.1" y="144" font-size="11" text-anchor="middle" style="fill:var(--s400)">30</text><text x="530" y="162" font-size="11" text-anchor="end" style="fill:var(--s400)">nm</text><text x="0" y="36" font-size="12.5" style="fill:var(--white)">TCS MS 03</text><rect x="215.7" y="24" width="125.7" height="16" rx="2" fill="var(--cyan)" fill-opacity=".85"/><text x="349.4" y="36" font-size="11.5" style="fill:var(--s200)">10–20</text><text x="0" y="72" font-size="12.5" style="fill:var(--white)">TCS MS 04</text><rect x="152.9" y="60" width="314.3" height="16" rx="2" fill="var(--cyan)" fill-opacity=".85"/><text x="160.9" y="72" font-size="11.5" style="fill:var(--ink);font-weight:600">5–30</text><text x="0" y="108" font-size="12.5" style="fill:var(--white)">TCS MS 05</text><rect x="127.7" y="96" width="50.3" height="16" rx="2" fill="var(--cyan)" fill-opacity=".85"/><text x="186.0" y="108" font-size="11.5" style="fill:var(--s200)">3–7</text></svg></div>
+  <p class="cap"><span lang="ja">細孔径のレンジ（nm）。</span><span lang="en">Pore-size range (nm).</span></p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th><span lang="ja">製品</span><span lang="en">Product</span></th><th><span lang="ja">細孔径</span><span lang="en">Pore size</span></th><th><span lang="ja">粒度</span><span lang="en">Particle size</span></th><th><span lang="ja">比表面積</span><span lang="en">SSA</span></th><th><span lang="ja">特長</span><span lang="en">Note</span></th></tr></thead>
+    <tbody>
+      <tr class="tcs"><td>TCS MS 03</td><td>10–20 nm</td><td><span lang="ja">最小 0.4 µm</span><span lang="en">down to 0.4 µm</span></td><td><span lang="ja">ご要望に応じて提示</span><span lang="en">on request</span></td><td><span lang="ja">大きい細孔 → 高性能</span><span lang="en">Large pores, high performance</span></td></tr>
+      <tr class="tcs"><td>TCS MS 04</td><td>5–30 nm</td><td><span lang="ja">最小 0.4 µm</span><span lang="en">down to 0.4 µm</span></td><td><span lang="ja">約 1,000 m²/g（BET）</span><span lang="en">≈1,000 m²/g (BET)</span></td><td><span lang="ja">広い細孔分布 → バランス</span><span lang="en">Wide distribution, balanced</span></td></tr>
+      <tr class="tcs"><td>TCS MS 05</td><td>3–7 nm</td><td><span lang="ja">最小 0.4 µm</span><span lang="en">down to 0.4 µm</span></td><td><span lang="ja">ご要望に応じて提示</span><span lang="en">on request</span></td><td><span lang="ja">小さい細孔 → 高耐久</span><span lang="en">Small pores, high durability</span></td></tr>
+    </tbody></table></div>
+  <p class="scroll-hint"><span lang="ja">← 表は横にスクロールできます</span><span lang="en">← Tables scroll sideways</span></p>
+  <p class="cap"><span lang="ja">細孔径・粒度は当社社内測定の代表値。MS 04の比表面積は評価試料のBET測定例 1,008 m²/g（約 1,000 m²/g と表記）。比表面積はお客様の要求に応じて設計できます。</span><span lang="en">Pore and particle sizes are representative TCS internal values. MS 04 SSA: BET measurement of an evaluation sample, 1,008 m²/g (shown as ≈1,000 m²/g). SSA can be designed to customer requirements.</span></p>
+
+  
+  <h3 class="subhead"><span lang="ja">触媒耐久加速試験（30,000サイクル）</span><span lang="en">Catalyst-durability AST (30,000 cycles)</span></h3>
+  <div class="chart"><div class="bars" id="bars" role="img" aria-label="Voltage loss at 2.0 A/cm²">
+    <div class="bar tcs"><span class="lbl">TCS MS 04 Pt/C</span><span class="track"><span class="fill" data-w="29.3"></span></span><span class="v num">29.3%</span></div>
+    <div class="bar ref"><span class="lbl"><span lang="ja">市販 Pt/C</span><span lang="en">Commercial Pt/C</span></span><span class="track"><span class="fill" data-w="32.2"></span></span><span class="v num">32.2%</span></div>
+  </div></div>
+  <p class="cap" style="margin-top:6px"><span lang="ja">2.0 A/cm² での電圧低下率（小さいほど良い）。軸 0–40%。</span><span lang="en">Voltage loss at 2.0 A/cm² (lower is better). Axis 0–40%.</span></p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th><span lang="ja">試料</span><span lang="en">Sample</span></th><th class="num"><span lang="ja">初期電圧（V）</span><span lang="en">Initial V</span><br>0.8 A/cm²</th><th class="num"><span lang="ja">30k後電圧（V）</span><span lang="en">After 30k V</span><br>0.8 A/cm²</th><th class="num"><span lang="ja">低下率（%）</span><span lang="en">V loss (%)</span><br>0.8 A/cm²</th><th class="num"><span lang="ja">低下率（%）</span><span lang="en">V loss (%)</span><br>2.0 A/cm²</th><th class="num"><span lang="ja">初期ECSA</span><span lang="en">Initial ECSA</span><br>m²/gPt</th><th class="num"><span lang="ja">30k後ECSA</span><span lang="en">After 30k ECSA</span><br>m²/gPt</th><th class="num"><span lang="ja">ECSA低下率（%）</span><span lang="en">ECSA loss (%)</span></th></tr></thead>
+    <tbody>
+      <tr class="tcs"><td>TCS MS 04 Pt/C（50%）<br><span style="color:var(--s400);font-weight:400"><span lang="ja">第3世代開発品</span><span lang="en">Gen-3</span></span></td><td class="num">0.684</td><td class="num">0.637</td><td class="num lag">6.9</td><td class="num">29.3</td><td class="num">71.7</td><td class="num">29.3</td><td class="num lag">59.1</td></tr>
+      <tr class="ref"><td><span lang="ja">高比表面積カーボン Pt/C（50%）</span><span lang="en">High-SSA carbon Pt/C (50%)</span><br><span lang="ja">市販触媒</span><span lang="en">Commercial</span></td><td class="num">0.681</td><td class="num">0.646</td><td class="num">5.1</td><td class="num">32.2</td><td class="num">85.9</td><td class="num">37.7</td><td class="num">56.1</td></tr>
+    </tbody></table></div>
+  <p class="cap"><span lang="ja">30,000サイクル後の電圧低下率は 0.8 A/cm² で 6.9%（市販品 5.1%）、2.0 A/cm² で 29.3%（市販品 32.2%）。ECSA低下率は 59.1%（市販品 56.1%）。TCS試料はMS 04担体 Pt/C 50%で、0.646 V の出力値（Pt/C 60%）とは別試料。I/C比は試料ごとに異なるため、担体単独の優劣を示す比較ではありません。当社資料掲載値。試験条件の詳細はお問い合わせください。</span><span lang="en">Voltage loss after 30,000 cycles: 6.9% at 0.8 A/cm² (commercial 5.1%), 29.3% at 2.0 A/cm² (commercial 32.2%). ECSA loss: 59.1% (commercial 56.1%). The TCS sample is 50% Pt/C on MS 04, a different sample from the 0.646 V output value (60% Pt/C). I/C ratio differs by sample, so this is not a comparison of the support alone. Values as reported in TCS material; please contact us for detailed test conditions.</span></p>
+  <div class="honest"><span lang="ja"><b>下線の2項目は、市販比較品のほうが良い値です。</b>0.8 A/cm² の低下率（6.9% 対 5.1%）とECSA低下率（59.1% 対 56.1%）。良い値だけを選んで並べることはしません。</span><span lang="en"><b>The two underlined cells are where the commercial reference is better:</b> loss at 0.8 A/cm² (6.9% vs 5.1%) and ECSA loss (59.1% vs 56.1%). We do not show only the favourable numbers.</span></div>
+
+  
+  <p class="cap"><span lang="ja">出典：当社 炭素開発資料（2026年11月版）。</span><span lang="en">Source: TCS carbon development material (Nov. 2026).</span></p>
+  <div class="cta-row"><a class="btn primary" href="mailto:dean@thecarbon.studio?subject=%5BPEMFC%5D%20%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E8%B2%B4%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%89%80%E5%B1%9E%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E9%96%A2%E5%BF%83%EF%BC%9APEMFC%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%EF%BC%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%BB%E9%9B%BB%E8%A9%B1%EF%BC%89%EF%BC%9A%0A%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E8%A6%81%E6%9C%9B%EF%BC%9A%0A"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">燃料電池（MPC）の資料・サンプルのご相談</span><span lang="en">Inquire about fuel cell / MPC</span></a></div>
+</div></section>
+
+<!-- ============ B. WATER ELECTROLYSIS ============ -->
+<section class="field we reveal" id="we"><div class="wrap">
+  <div class="field-badge"><svg  viewBox="0 0 44 44" fill="none" stroke="#D2622F" stroke-width="1.6" aria-hidden="true"><path d="M22 5C22 5 11 18 11 26a11 11 0 0 0 22 0C33 18 22 5 22 5z"/><circle cx="18" cy="27" r="1.8"/><circle cx="25" cy="31" r="1.4"/><path d="M22 14v6" stroke-opacity=".6"/></svg><div><div class="pk">B · PEMWE</div><h2><span lang="ja">水電解（PEMWE）向け：Ir系アノード触媒・CCM/MEA</span><span lang="en">Water electrolysis (PEMWE): Ir-based anode catalyst, CCM/MEA</span></h2></div></div>
+  <p class="purpose"><span lang="ja"><b>このセクションは、PEM水電解のアノード触媒（Ir系）と、それを使ったCCM・MEAのご紹介です。</b>MPC（炭素担体）は燃料電池用の製品です。そちらは <a href="#fc">A 燃料電池セクション</a> をご覧ください。</span><span lang="en"><b>This section is about Ir-based anode catalysts for PEM water electrolysis and the CCMs and MEAs made with them.</b> MPC (carbon support) is a fuel-cell product — see <a href="#fc">Section A</a>.</span></p>
+
+  <div class="fig1 two">
+    <div class="fig"><div class="tag">PEMWE · CCM/MEA</div>
+      <div class="num"><span>932</span><small>h</small></div>
+      <div class="what"><span lang="ja">2.0 A/cm²・80 ℃ の定電流区間運転（6区間の累計）</span><span lang="en">Constant-current segmented run, 2.0 A/cm², 80 ℃ (six segments in total)</span></div>
+      <div class="cond"><span lang="ja">試験の詳細はお問い合わせください。</span><span lang="en">For further test details, please contact us.</span></div></div>
+    <div class="fig"><div class="tag">IP · PEMWE</div>
+      <div class="num"><span lang="ja" style="font-size:.42em;letter-spacing:0">特許出願中</span><span lang="en" style="font-size:.42em;letter-spacing:0">Patents pending</span></div>
+      <div class="what"><span lang="ja">Ir系アノード触媒（KR・JP・US・CN・EP）</span><span lang="en">Ir-based anode catalyst (KR, JP, US, CN, EP)</span></div>
+      <div class="cond"><span lang="ja">出願中。登録済みではありません。</span><span lang="en">Applications pending; not yet granted.</span></div></div>
+  </div>
+
+  <h3 class="subhead"><span lang="ja">当社の位置（水電解）</span><span lang="en">Where we sit (water electrolysis)</span></h3>
+  <div class="chain">
+    <div class="node tcs"><span class="n"><span lang="ja">アノード触媒</span><span lang="en">Anode catalyst</span></span><span class="d"><span lang="ja">Ir系酸化物 / 酸化物担体（TiO₂・ATO 等）</span><span lang="en">Ir-based oxides / oxide supports (TiO₂, ATO, etc.)</span></span></div>
+    <div class="node tcs"><span class="n">CCM</span><span class="d">Catalyst-coated membrane</span></div>
+    <div class="node tcs"><span class="n">MEA</span><span class="d">Membrane electrode assembly</span></div>
+    <div class="node ptn"><span class="n"><span lang="ja">スタック・システム</span><span lang="en">Stack &amp; system</span></span><span class="d"><span lang="ja">パートナー</span><span lang="en">Partners</span></span></div>
+  </div>
+  <p class="cap"><span lang="ja">TCS＝当社が設計・製造する範囲。Ir使用量の低減を目指したIr系アノード触媒から、CCM・MEAまで一貫製造しています。</span><span lang="en">TCS = what we design and make. Made in-house from an Ir-based anode catalyst designed to reduce iridium use, through CCM and MEA.</span></p>
+
+  <h3 class="subhead"><span lang="ja">構成のイメージ</span><span lang="en">Structure at a glance</span></h3>
+  <div class="photos two">
+    <figure class="ph"><span class="badge ill">イメージ図 / Illustration</span><img src="img/we_ccm_concept.svg" width="960" height="420" loading="lazy" alt="Concept illustration of a PEM water electrolysis cell cross-section"><figcaption><span lang="ja">イメージ図 / Illustration：PEM水電解セルの層構成（縮尺なし）。実測の断面像ではありません。</span><span lang="en">Illustration: layer structure of a PEM electrolysis cell (not to scale). Not a measured cross-section.</span></figcaption></figure>
+    <figure class="ph"><span class="badge ill">イメージ図 / Illustration</span><img src="img/we_ir_concept.svg" width="960" height="420" loading="lazy" alt="Concept illustration of Ir-based catalyst particles on an oxide support"><figcaption><span lang="ja">イメージ図 / Illustration：酸化物担体上のIr系触媒粒子の概念（縮尺なし）。実測像ではありません。</span><span lang="en">Illustration: concept of Ir-based catalyst particles on an oxide support (not to scale). Not a measured image.</span></figcaption></figure>
+  </div>
+  <p class="cap"><span lang="ja">CCM・MEAの実物写真や分析像は、条件を確認のうえ個別にご案内します。</span><span lang="en">Photos and analytical images of actual CCM/MEA are discussed individually after confirming conditions.</span></p>
+
+  <h3 class="subhead"><span lang="ja">仕様</span><span lang="en">Specification</span></h3>
+  <dl class="kv" style="max-width:48em">
+    <div><dt><span lang="ja">アノード</span><span lang="en">Anode</span></dt><dd><span lang="ja">Ir系酸化物 / 酸化物担体（TiO₂・ATO 等）</span><span lang="en">Ir-based oxides / oxide supports (TiO₂, ATO, etc.)</span></dd></div>
+    <div><dt><span lang="ja">カソード</span><span lang="en">Cathode</span></dt><dd>Pt/C (HER)</dd></div>
+    <div><dt><span lang="ja">耐久試験</span><span lang="en">Durability</span></dt><dd><span lang="ja">AST 1,000サイクル・電流ステップ 2,000サイクル・定電流区間運転 累計932 h（2.0 A/cm²・80 ℃）</span><span lang="en">AST 1,000 cycles · current-step 2,000 cycles · segmented constant-current 932 h (2.0 A/cm², 80 ℃)</span></dd></div>
+  </dl>
+
+  <h3 class="subhead"><span lang="ja">PEM水電解 CCM/MEA 耐久試験</span><span lang="en">PEM electrolysis CCM/MEA durability tests</span></h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th><span lang="ja">試験</span><span lang="en">Test</span></th><th><span lang="ja">条件</span><span lang="en">Condition</span></th><th><span lang="ja">期間</span><span lang="en">Length</span></th><th><span lang="ja">結果</span><span lang="en">Result</span></th></tr></thead>
+    <tbody>
+      <tr><td><span lang="ja">電圧サイクルAST</span><span lang="en">Voltage-cycling AST</span></td><td>1.6–2.0 V, 500 mV/s, 80 ℃</td><td>1,000 cycles</td><td><span lang="ja">当該評価試料では、I–V変化が市販比較品より小さい結果でした（比較条件の詳細はお問い合わせください）</span><span lang="en">For the tested sample, smaller I–V change than the commercial reference (contact us for comparison conditions)</span></td></tr>
+      <tr><td><span lang="ja">電流ステップ</span><span lang="en">Current-step cycling</span></td><td><span lang="ja">1.3 A/cm²で30秒 → 1.8 A/cm²で30秒、80 ℃</span><span lang="en">1.3 A/cm² for 30 s → 1.8 A/cm² for 30 s, 80 ℃</span></td><td>2,000 cycles</td><td><span lang="ja">BOL・EOLでI–V測定</span><span lang="en">I–V at BOL and EOL</span></td></tr>
+      <tr><td><span lang="ja">定電流（区間運転）</span><span lang="en">Constant current, segmented</span></td><td><span lang="ja">定電流 2.0 A/cm², 80 ℃</span><span lang="en">Constant current 2.0 A/cm², 80 ℃</span></td><td>932 h</td><td><span lang="ja">詳細はお問い合わせください</span><span lang="en">Details on request</span></td></tr>
+    </tbody></table></div>
+  <div class="chart"><svg viewBox="0 0 560 96" role="img" aria-label="932 h in six segments"><rect x="0.0" y="18" width="64.3" height="30" rx="2" fill="var(--cyan)" fill-opacity="0.55"/><text x="32.2" y="38" font-size="11.5" text-anchor="middle" style="fill:var(--ink);font-weight:700">110</text><text x="32.2" y="66" font-size="10.5" text-anchor="middle" style="fill:var(--s400)">#1</text><rect x="67.3" y="18" width="76.0" height="30" rx="2" fill="var(--cyan)" fill-opacity="0.62"/><text x="105.3" y="38" font-size="11.5" text-anchor="middle" style="fill:var(--ink);font-weight:700">130</text><text x="105.3" y="66" font-size="10.5" text-anchor="middle" style="fill:var(--s400)">#2</text><rect x="146.3" y="18" width="70.2" height="30" rx="2" fill="var(--cyan)" fill-opacity="0.69"/><text x="181.4" y="38" font-size="11.5" text-anchor="middle" style="fill:var(--ink);font-weight:700">120</text><text x="181.4" y="66" font-size="10.5" text-anchor="middle" style="fill:var(--s400)">#3</text><rect x="219.5" y="18" width="128.6" height="30" rx="2" fill="var(--cyan)" fill-opacity="0.76"/><text x="283.8" y="38" font-size="11.5" text-anchor="middle" style="fill:var(--ink);font-weight:700">220</text><text x="283.8" y="66" font-size="10.5" text-anchor="middle" style="fill:var(--s400)">#4</text><rect x="351.2" y="18" width="109.9" height="30" rx="2" fill="var(--cyan)" fill-opacity="0.83"/><text x="406.1" y="38" font-size="11.5" text-anchor="middle" style="fill:var(--ink);font-weight:700">188</text><text x="406.1" y="66" font-size="10.5" text-anchor="middle" style="fill:var(--s400)">#5</text><rect x="464.1" y="18" width="95.9" height="30" rx="2" fill="var(--cyan)" fill-opacity="0.90"/><text x="512.0" y="38" font-size="11.5" text-anchor="middle" style="fill:var(--ink);font-weight:700">164</text><text x="512.0" y="66" font-size="10.5" text-anchor="middle" style="fill:var(--s400)">#6</text><text x="0" y="90" font-size="11" style="fill:var(--s400)">h  ·  110 + 130 + 120 + 220 + 188 + 164 = 932 h</text></svg></div>
+  <p class="cap"><span lang="ja">932 h の内訳（6区間・単位 h）。区間の間にN₂パージ・休止・性能評価。休止後に電圧は一部回復し、不可逆劣化は別途定量していません。</span><span lang="en">Breakdown of the 932 h (six segments, h), with N₂ purge, rest and performance checks between them. Voltage partly recovers after rests; irreversible degradation was not separately quantified.</span></p>
+  <p class="cap"><span lang="ja">出典：当社 炭素開発資料（2026年11月版）、当社単セル試験記録。</span><span lang="en">Source: TCS carbon development material (Nov. 2026); TCS single-cell test records.</span></p>
+
+  <div class="cta-row"><a class="btn primary" href="mailto:dean@thecarbon.studio?subject=%5BPEMWE%5D%20%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E8%B2%B4%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%89%80%E5%B1%9E%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E9%96%A2%E5%BF%83%EF%BC%9APEMWE%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%EF%BC%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%BB%E9%9B%BB%E8%A9%B1%EF%BC%89%EF%BC%9A%0A%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E8%A6%81%E6%9C%9B%EF%BC%9A%0A"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">水電解（CCM/MEA）の資料・サンプルのご相談</span><span lang="en">Inquire about electrolysis / CCM/MEA</span></a></div>
+</div></section>
+
+<section class="reveal" id="work"><div class="wrap">
+  <div class="sec-h"><span class="no">C</span><h2><span lang="ja">評価・供給までの進め方</span><span lang="en">How we work with you</span></h2></div>
+  <p class="sub"><span lang="ja">燃料電池・水電解に共通の進め方です。まずは小さな評価から、段階を踏んで進めます。</span><span lang="en">The same approach for fuel cells and electrolysis. Start with a small evaluation and proceed step by step.</span></p>
+  <div class="steps">
+    <div class="step"><div class="sn">STEP 1</div><h3><span lang="ja">サンプル評価</span><span lang="en">Sample evaluation</span></h3><p><span lang="ja">仕様・供給可否を確認のうえ、評価用サンプルを個別にご案内します。</span><span lang="en">After checking specification and availability, we discuss evaluation samples individually.</span></p></div>
+    <div class="step"><div class="sn">STEP 2</div><h3><span lang="ja">共同評価</span><span lang="en">Joint evaluation</span></h3><p><span lang="ja">試験条件・試料仕様をお知らせいただければ、試験計画と試料提供について個別にご相談します。</span><span lang="en">Tell us your test protocol or sample specification; we will discuss a test plan and samples individually.</span></p></div>
+    <div class="step"><div class="sn">STEP 3</div><h3><span lang="ja">供給段階</span><span lang="en">Supply stage</span></h3><p><span lang="ja">仕様の調整はご相談ください。数量・納期は仕様確認後にご連絡します。</span><span lang="en">Specifications can be tuned — ask us. Quantity and lead time follow after spec review.</span></p></div>
+  </div>
+  <div class="pills"><span class="pill"><span lang="ja">日本語でのお問い合わせも承ります</span><span lang="en">Inquiries in Japanese are welcome</span></span><span class="pill"><span lang="ja">詳細データは、NDA等の条件と開示可能な範囲を確認のうえ、個別にご相談</span><span lang="en">Detailed data: discussed individually, subject to NDA terms and disclosable scope</span></span></div>
+</div></section>
+
+<section class="reveal" id="contact"><div class="wrap"><div class="contact">
+  <div class="sec-h"><span class="no">D</span><h2><span lang="ja">資料・サンプルのご相談</span><span lang="en">Talk to us about materials and samples</span></h2></div>
+  <p class="lead2"><span lang="ja">ご関心の分野を選んで、用途・試験条件・ご希望の仕様をひと言お送りください。担当よりご連絡します。</span><span lang="en">Pick your field and tell us your application, test conditions and desired specification in a line or two. We will get back to you.</span></p>
+  <div class="cta-row" style="margin-top:14px"><a class="btn" href="mailto:dean@thecarbon.studio?subject=%E3%80%90%E8%B3%87%E6%96%99%E8%AB%8B%E6%B1%82%E3%80%91THE%20CARBON%20STUDIO%20%E8%B3%87%E6%96%99%E3%81%AE%E3%81%94%E9%80%81%E4%BB%98&body=%E8%B2%B4%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%89%80%E5%B1%9E%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E8%B3%87%E6%96%99%EF%BC%88MPC%20%2F%20Ir%E8%A7%A6%E5%AA%92%E3%83%BBCCM%E3%83%BBMEA%EF%BC%89%EF%BC%9A%0A%E8%B3%87%E6%96%99%E3%81%AE%E9%80%81%E4%BB%98%E5%85%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0A"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">資料をメールで受け取る</span><span lang="en">Request materials by e-mail</span></a></div>
+  <div class="contact2">
+    <div class="cbox"><h3><span lang="ja">燃料電池（MPC）</span><span lang="en">Fuel cell (MPC)</span></h3><p><span lang="ja">炭素担体のサンプル評価</span><span lang="en">Carbon-support sample evaluation</span></p><a class="btn primary" href="mailto:dean@thecarbon.studio?subject=%5BPEMFC%5D%20%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E8%B2%B4%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%89%80%E5%B1%9E%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E9%96%A2%E5%BF%83%EF%BC%9APEMFC%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%EF%BC%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%BB%E9%9B%BB%E8%A9%B1%EF%BC%89%EF%BC%9A%0A%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E8%A6%81%E6%9C%9B%EF%BC%9A%0A"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">燃料電池のご相談</span><span lang="en">Fuel cell inquiry</span></a></div>
+    <div class="cbox we"><h3><span lang="ja">水電解（Ir触媒・CCM/MEA）</span><span lang="en">Water electrolysis (Ir catalyst · CCM/MEA)</span></h3><p><span lang="ja">触媒・CCM・MEAの評価</span><span lang="en">Catalyst, CCM and MEA evaluation</span></p><a class="btn primary" href="mailto:dean@thecarbon.studio?subject=%5BPEMWE%5D%20%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E8%B2%B4%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%89%80%E5%B1%9E%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E9%96%A2%E5%BF%83%EF%BC%9APEMWE%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%EF%BC%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%BB%E9%9B%BB%E8%A9%B1%EF%BC%89%EF%BC%9A%0A%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E8%A6%81%E6%9C%9B%EF%BC%9A%0A"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">水電解のご相談</span><span lang="en">Electrolysis inquiry</span></a></div>
+  </div>
+  <div class="pcblock"><h3><span lang="ja">PCで続きを見る</span><span lang="en">Continue on your PC</span></h3><p><span lang="ja">このページのリンクを、PCや自分宛てに送れます。</span><span lang="en">Send this page's link to your PC or to yourself.</span></p><div class="pcrow"><button type="button" class="btn" data-share="1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="8.5" rx="1"/><path d="M5 14h6M8 11v3"/></svg><span lang="ja">PCで続きを見る</span><span lang="en">Continue on PC</span></button><a class="btn" data-selfmail="1" href="mailto:?subject=THE%20CARBON%20STUDIO&body="><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">ご自身宛にURLを送る</span><span lang="en">E-mail the link to yourself</span></a><span class="status" role="status" aria-live="polite"></span><button type="button" class="btn" data-copy="1"><span lang="ja">リンクをコピー</span><span lang="en">Copy link</span></button></div></div>
+  <div class="addr"><b style="color:var(--white)"><span lang="ja">日本窓口：合同会社KALTECH（東京・新橋）</span><span lang="en">Japan desk: KALTECH LLC (Shimbashi, Tokyo)</span></b><br>
+  <span lang="ja">東京都港区新橋3-11-8 オーイズミ新橋第2ビル</span><span lang="en">Oizumi Shimbashi No.2 Bldg., 3-11-8 Shimbashi, Minato-ku, Tokyo</span><br>
+  Tel <a href="tel:+81368092244">+81-3-6809-2244</a><br>
+  <span lang="ja">メールのお問い合わせ先：</span><span lang="en">E-mail inquiries to: </span>dean@thecarbon.studio<br><br>
+  THE CARBON STUDIO, INC. <span lang="ja">（本社・韓国）</span><span lang="en">(HQ, Korea)</span><br>4, Techno 2-ro, Yuseong-gu, Daejeon, Korea<br>Tel <a href="tel:+82429331335">+82-42-933-1335</a> · <a href="https://www.thecarbon.studio/" rel="noopener">www.thecarbon.studio</a> <span lang="ja">（韓国語）</span><span lang="en">(Korean)</span></div>
+</div></div></section>
+</main>
+<nav class="thumb" aria-label="Contact"><a class="m" href="mailto:dean@thecarbon.studio?subject=%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E8%B2%B4%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%89%80%E5%B1%9E%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E9%96%A2%E5%BF%83%EF%BC%9APEMFC%E3%83%BBPEMWE%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%EF%BC%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%BB%E9%9B%BB%E8%A9%B1%EF%BC%89%EF%BC%9A%0A%E8%B3%87%E6%96%99%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE%E3%81%94%E8%A6%81%E6%9C%9B%EF%BC%9A%0A"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg><span lang="ja">メール</span><span lang="en">E-mail</span></a><a href="tel:+81368092244"><span lang="ja">日本窓口へ電話</span><span lang="en">Call Japan desk</span></a><a href="tcs-contact.vcf" download><span lang="ja">連絡先を保存</span><span lang="en">Save contact</span></a></nav>
+<footer><div class="wrap">
+  <span class="ev">FCDIC Seminar 2026.11.11</span>
+  <p>© 2026 THE CARBON STUDIO, INC. <span lang="ja">無断転載を禁じます。記載値は代表値であり保証値ではありません。</span><span lang="en">All rights reserved. Values are representative, not guaranteed.</span></p>
+  <p><span lang="ja">本ページの全部または一部を、機械学習・生成AIの学習・テキストおよびデータマイニングに利用することを禁じます。</span><span lang="en">No part of this page may be used for machine learning, AI training, or text and data mining.</span></p>
+</div></footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  var rm=false;try{rm=window.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+  function setLang(l){
+    if(l!=="ja"&&l!=="en")l="ja";
+    root.setAttribute("data-lang",l);root.setAttribute("lang",l);
+    var b=document.querySelectorAll(".lang button");
+    for(var i=0;i<b.length;i++)b[i].setAttribute("aria-pressed",b[i].getAttribute("data-set")===l?"true":"false");
+    try{localStorage.setItem("tcs_lang",l)}catch(e){}
+  }
+  var q=null;try{q=new URLSearchParams(location.search).get("lang")}catch(e){}
+  var s=null;try{s=localStorage.getItem("tcs_lang")}catch(e){}
+  setLang(q||s||"ja");
+  document.querySelectorAll(".lang button").forEach(function(x){x.addEventListener("click",function(){setLang(x.getAttribute("data-set"))})});
+  function fillBars(){document.querySelectorAll("#bars .fill").forEach(function(f){f.style.width=(parseFloat(f.getAttribute("data-w"))/40*100)+"%"})}
+  var els=document.querySelectorAll(".reveal");
+  function show(e){e.classList.add("in");if(e.querySelector("#bars"))fillBars()}
+  if(!("IntersectionObserver" in window)){els.forEach(show);return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){e.classList.add("in")});fillBars()},4500);
+})();
+</script>
+<noscript><style>.reveal{opacity:1;transform:none}#bars .fill[data-w="29.3"]{width:73.25%}#bars .fill[data-w="32.2"]{width:80.5%}</style></noscript>
+<script>
+(function(){
+  var url=location.href.split('#')[0];
+  function enc(x){return encodeURIComponent(x)}
+  document.querySelectorAll('a[href^="mailto:dean@"]').forEach(function(a){
+    var h=a.getAttribute('href');
+    if(h.indexOf('&body=')>0)a.setAttribute('href',h+enc('\nご覧のページ：'+url+'\n'));
+  });
+  document.querySelectorAll('[data-selfmail]').forEach(function(a){
+    a.setAttribute('href','mailto:?subject='+enc('THE CARBON STUDIO — 資料ページ / Page link')+'&body='+enc('THE CARBON STUDIO\n'+url+'\n'));
+  });
+  function say(t){document.querySelectorAll('.pcrow .status').forEach(function(s){s.textContent=t;setTimeout(function(){s.textContent=''},3000)})}
+  function copy(){
+    var done=function(){say(document.documentElement.getAttribute('data-lang')==='en'?'Link copied':'リンクをコピーしました')};
+    function fallback(){var t=document.createElement('textarea');t.value=url;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done()}catch(e){say(url)}document.body.removeChild(t)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,fallback)}else fallback();
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',copy)});
+  document.querySelectorAll('[data-share]').forEach(function(b){b.addEventListener('click',function(){
+    if(navigator.share){navigator.share({title:'THE CARBON STUDIO',text:'THE CARBON STUDIO',url:url}).catch(function(){})}else copy();
+  })});
+})();
+</script>
+</body>
+</html>
